@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A spinning Yeezus listening room.">
+  <title>Yeezus / Spinning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="listening-room">
+    <header class="topbar">
+      <a class="wordmark" href="index.html" aria-label="Yeezus home">YEEZUS<span>/</span>001</a>
+      <p class="status"><span class="status-dot"></span>Now spinning</p>
+    </header>
+
+    <section class="hero" aria-labelledby="album-title">
+      <div class="intro">
+        <p class="eyebrow">The sixth studio album / 2013</p>
+        <h1 id="album-title">Yeezus</h1>
+        <p class="subtitle">Kanye West</p>
+        <p class="description">A small digital turntable for an album that still sounds like the future.</p>
+      </div>
+
+      <div class="turntable-wrap">
+        <canvas class="energy-canvas" aria-hidden="true"></canvas>
+        <button class="record-button is-playing" type="button" aria-label="Pause record" aria-pressed="true">
+          <span class="record" aria-hidden="true">
+            <img src="Image/Kp14VgL.jpg" alt="Yeezus album artwork" class="record-art">
+            <span class="record-label">V</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="player-panel">
+        <div class="track-info">
+          <span class="track-number">01</span>
+          <div>
+            <strong>On Sight</strong>
+            <span>Yeezus</span>
+          </div>
+        </div>
+        <div class="player-controls">
+          <button class="control-button" type="button" data-speed="1" aria-label="Set slow speed">33</button>
+          <button class="control-button active" type="button" data-speed="1.35" aria-label="Set standard speed">45</button>
+          <button class="control-button" type="button" data-speed="1.8" aria-label="Set fast speed">78</button>
+          <button class="control-button tune-button" type="button" aria-label="Open visual settings" aria-expanded="false">TUNE</button>
+        </div>
+        <div class="tuning-panel" aria-hidden="true">
+          <div class="tuning-heading">
+            <span>Spin frequency</span>
+            <output id="intensity-value" for="intensity">72%</output>
+          </div>
+          <input id="intensity" type="range" min="0" max="100" value="72">
+          <button class="supernova-button" type="button" aria-pressed="false">
+            <span class="supernova-mark"></span>
+            <span>Supernova</span>
+            <span class="supernova-state">Off</span>
+          </button>
+        </div>
+        <div class="timecode" aria-label="Playback time">00:00 <span>/</span> 02:36</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Def Jam Recordings</span>
+      <span>Press play to pause</span>
+      <span>Side A / 01</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
